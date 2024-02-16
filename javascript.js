@@ -3,11 +3,11 @@ function getComputerChoice() {
 
     randNum = Math.floor(Math.random() * 3) + 1;
     if (randNum === 1) {
-        return 'Rock';
+        return 'rock';
     } else if (randNum === 2) {
-        return 'Paper';
+        return 'paper';
     } else {
-        return 'Scissors';
+        return 'scissors';
     }
 
 }
@@ -24,10 +24,10 @@ function getPlayerChoice() {
 
         if (playerPiece === 'rock') {
             playerOption = true;
-            return 'Rock';
+            return 'rock';
         } else if (playerPiece === 'paper') {
             playerOption = true;
-            return 'Paper';
+            return 'paper';
         } else if (playerPiece === 'scissors') {
             playerOption = true;
             return 'scissors';
@@ -38,6 +38,35 @@ function getPlayerChoice() {
     }
 }
 
-console.log(getPlayerChoice())
+let computerSelection = getComputerChoice();
+let playerSelection = getPlayerChoice();
 
-console.log(getComputerChoice())
+function playRound(computerSelection, playerSelection) {
+    
+    let roundRun = false;
+
+    while(roundRun === false) {
+
+        if (computerSelection === playerSelection) {
+            return 'You have tied! Try again.';
+        } else if (computerSelection === 'rock' && playerSelection === 'paper') {
+            return 'You win! Paper beats rock. Well done!';
+        } else if (computerSelection === 'rock' && playerSelection === 'scissors') {
+            return 'You lose. Rock beats scissors. Better luck next time!';
+        } else if (computerSelection === 'paper' && playerSelection === 'rock') {
+            return 'You lose. Paper beats rock. Better luck next time!';
+        } else if (computerSelection === 'paper' && playerSelection === 'scissors') {
+            return 'You win! Scissors beat paper. Well done!';
+        } else if (computerSelection === 'scissors' && playerSelection === 'paper') {
+            return 'You lose! Scissors beat paper. Better luck next time!';
+        } else if (computerSelection === 'scissors' && playerSelection === 'rock') {
+            return 'You win! Rock beats scissors. Well done!';
+        }
+
+        roundRun = true;
+    }
+
+}
+
+console.log(playRound(computerSelection, playerSelection));
+
