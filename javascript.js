@@ -42,28 +42,21 @@ let computerSelection = getComputerChoice();
 let playerSelection = getPlayerChoice();
 
 function playRound(computerSelection, playerSelection) {
-    
-    let roundRun = false;
 
-    while(roundRun === false) {
-
-        if (computerSelection === playerSelection) {
-            return 'You have tied! Try again.';
-        } else if (computerSelection === 'rock' && playerSelection === 'paper') {
-            return 'You win! Paper beats rock. Well done!';
-        } else if (computerSelection === 'rock' && playerSelection === 'scissors') {
-            return 'You lose. Rock beats scissors. Better luck next time!';
-        } else if (computerSelection === 'paper' && playerSelection === 'rock') {
-            return 'You lose. Paper beats rock. Better luck next time!';
-        } else if (computerSelection === 'paper' && playerSelection === 'scissors') {
-            return 'You win! Scissors beat paper. Well done!';
-        } else if (computerSelection === 'scissors' && playerSelection === 'paper') {
-            return 'You lose! Scissors beat paper. Better luck next time!';
-        } else if (computerSelection === 'scissors' && playerSelection === 'rock') {
-            return 'You win! Rock beats scissors. Well done!';
-        }
-
-        roundRun = true;
+    if (computerSelection === playerSelection) {
+        return 'You have tied! Try again.';
+    } else if (computerSelection === 'rock' && playerSelection === 'paper') {
+        return 'You win! Paper beats rock. Well done!';
+    } else if (computerSelection === 'rock' && playerSelection === 'scissors') {
+        return 'You lose. Rock beats scissors. Better luck next time!';
+    } else if (computerSelection === 'paper' && playerSelection === 'rock') {
+        return 'You lose. Paper beats rock. Better luck next time!';
+    } else if (computerSelection === 'paper' && playerSelection === 'scissors') {
+        return 'You win! Scissors beat paper. Well done!';
+    } else if (computerSelection === 'scissors' && playerSelection === 'paper') {
+        return 'You lose! Scissors beat paper. Better luck next time!';
+    } else if (computerSelection === 'scissors' && playerSelection === 'rock') {
+        return 'You win! Rock beats scissors. Well done!';
     }
 
 }
